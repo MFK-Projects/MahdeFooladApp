@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharedFrameWork;
 using SharedFrameWork.Application;
+using Microsoft.AspNetCore.Razor.Runtime;
 
 namespace MahdeFoolad
 {
@@ -24,7 +25,7 @@ namespace MahdeFoolad
         {
 
             services.RegisterSharedFrameworkService(Configuration.GetConnectionString("DefaultConnection"));
-            services.AddControllersWithViews();
+            object p = services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
