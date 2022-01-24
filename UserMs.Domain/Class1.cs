@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReportMs.Infrastructure
+namespace UserMs.Domain
 {
     public class Class1
     {
