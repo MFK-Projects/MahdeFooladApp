@@ -24,6 +24,7 @@ namespace MahdeFoolad
         {
 
             services.RegisterSharedFrameworkService(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,17 +32,20 @@ namespace MahdeFoolad
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage(); 
+                app.UseDeveloperExceptionPage();
             }
 
 
-
+            app.UseStaticFiles();
             app.UseRouting();
 
 
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute("AdminArea", "Admin", "{area:exists}/{controller}/{action}/{Id?}");
+                endpoints.MapAreaControllerRoute("UserAera", "User", "{area:exists}/{controller}/{action}/{Id?}");
+
                 endpoints.MapControllerRoute(
                     name: "Default",
                      pattern: "{controller=home}/{action=index}/{id?}");

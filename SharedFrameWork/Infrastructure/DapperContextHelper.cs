@@ -45,8 +45,11 @@ namespace SharedFrameWork.Infrastructure
 
             if(dispose)
             {
-                _connection.Dispose();
-                _locker = null;
+                if(_connection != null)
+                {
+                    _connection.Dispose();
+                    _locker = null;
+                }
             }
 
             _disposed = true;

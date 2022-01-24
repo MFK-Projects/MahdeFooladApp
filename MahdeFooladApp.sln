@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31829.152
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RreportTMangamentSystem", "RreportTMangamentSystem", "{785848A9-2E6A-43FD-B086-7A4F2C1449D8}"
 EndProject
@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoint", "EndPoint", "{C3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMs.Domain", "ReportMs.Domain\ReportMs.Domain.csproj", "{15FEF4CC-9262-4272-B8EB-0680770152BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMs.Application", "ReportMs.Application\ReportMs.Application.csproj", "{26A79FD6-E090-4556-BE25-AB8033C0F421}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMs.Application", "ReportMs.Application\ReportMs.Application.csproj", "{26A79FD6-E090-4556-BE25-AB8033C0F421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportMs.Infrastructure", "ReportMs.Infrastructure\ReportMs.Infrastructure.csproj", "{601CFD3E-AA52-4DC4-91C0-1B8E71C699D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportMs.Infrastructure", "ReportMs.Infrastructure\ReportMs.Infrastructure.csproj", "{601CFD3E-AA52-4DC4-91C0-1B8E71C699D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagmentSystem", "UserManagmentSystem", "{634FB155-3006-4453-9427-7CD3C8F5A8FF}"
 EndProject
@@ -27,15 +27,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{3798AC22-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{02442D6F-B151-44D7-AE04-D0ABD2C25CF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMs.Domain", "UserMs.Domain\UserMs.Domain.csproj", "{A612047F-1861-4E4E-ADF9-E8DEF5A5E44E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserMs.Domain", "UserMs.Domain\UserMs.Domain.csproj", "{A612047F-1861-4E4E-ADF9-E8DEF5A5E44E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMs.Application", "UserMs.Application\UserMs.Application.csproj", "{9C30137A-2086-44C6-8858-9FA207F165CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserMs.Application", "UserMs.Application\UserMs.Application.csproj", "{9C30137A-2086-44C6-8858-9FA207F165CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMs.Infrastructure", "UserMs.Infrastructure\UserMs.Infrastructure.csproj", "{680DE9E6-C815-4E2B-AED6-0FCED7B02A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserMs.Infrastructure", "UserMs.Infrastructure\UserMs.Infrastructure.csproj", "{680DE9E6-C815-4E2B-AED6-0FCED7B02A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedFrameWork", "SharedFrameWork\SharedFrameWork.csproj", "{10638BC5-1358-4593-AA64-190B58E9FB5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedFrameWork", "SharedFrameWork\SharedFrameWork.csproj", "{10638BC5-1358-4593-AA64-190B58E9FB5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahdeFoolad", "MahdeFoolad\MahdeFoolad.csproj", "{C9962704-5A52-4C23-9478-40AB990B1B27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahdeFoolad", "MahdeFoolad\MahdeFoolad.csproj", "{C9962704-5A52-4C23-9478-40AB990B1B27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
