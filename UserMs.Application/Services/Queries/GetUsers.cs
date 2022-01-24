@@ -5,6 +5,6 @@ namespace UserMs.Application.Services.Queries
 {
     public class GetUsers
     {
-        public List<UserViewModel> Handle (UserSearchModel searchModel) { }
+      //  public List<UserViewModel> Handle (UserSearchModel searchModel) { }
     }
 }

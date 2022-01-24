@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharedFrameWork;
-
+using SharedFrameWork.Application;
 
 namespace MahdeFoolad
 {
@@ -27,20 +27,24 @@ namespace MahdeFoolad
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IContextHelper mongohelper)
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); 
             }
 
+
+
             app.UseRouting();
+
+
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "Default",
-                     pattern:"{controller=home}/{action=index}/{id?}");
+                     pattern: "{controller=home}/{action=index}/{id?}");
             });
         }
     }

@@ -8,7 +8,7 @@ namespace SharedFrameWork
     {
         public static void RegisterSharedFrameworkService(this IServiceCollection services,string connectionString)
         {
-            services.AddScoped<IMongoDbHelper>(x => new MongoDbHelper(connectionString));
+            services.AddScoped<IContextHelper>(x=>new DapperContextHelper(connectionString));
 
         }
     }
