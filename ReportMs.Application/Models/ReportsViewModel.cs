@@ -13,6 +13,14 @@ namespace ReportMs.Application.Models
 
     }
 
+
+    public class SearchReportModel
+    {
+        public string Name { get; set; }
+        public string CategoryName { get; set; }
+        public string UserName { get; set; }
+    }
+
     public class ReportCreateModel
     {
         public string Name { get; set; }

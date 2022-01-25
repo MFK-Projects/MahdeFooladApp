@@ -28,6 +28,6 @@ namespace UserMs.Application.Models
     public class UserSearchModel
     {
         public string Name { get; set; }
-        public string mobile { get; set; }
+        public string RoleName { get; set; }
     }
 }

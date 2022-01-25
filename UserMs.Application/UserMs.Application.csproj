@@ -6,15 +6,17 @@
 
   <ItemGroup>
     <Compile Remove="commn\**" />
-    <Compile Remove="Interfaces\**" />
     <EmbeddedResource Remove="commn\**" />
-    <EmbeddedResource Remove="Interfaces\**" />
     <None Remove="commn\**" />
-    <None Remove="Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Queries\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharedFrameWork\SharedFrameWork.csproj" />
+    <ProjectReference Include="..\UserMs.Domain\UserMs.Domain.csproj" />
   </ItemGroup>
 
 </Project>
