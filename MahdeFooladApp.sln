@@ -43,9 +43,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A7BCA315-438
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMenuMs.Domain", "SiteMenuMs.Domain\SiteMenuMs.Domain.csproj", "{FDF3C8F1-33DC-4829-9796-D58A67D3C2A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMenuMs.Application", "SiteMenuMs.Application\SiteMenuMs.Application.csproj", "{7EDA3617-8D93-4C95-BF8B-00D2423ED980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMenuMs.Application", "SiteMenuMs.Application\SiteMenuMs.Application.csproj", "{7EDA3617-8D93-4C95-BF8B-00D2423ED980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMenuMs.Infrastrucure", "SiteMenuMs.Infrastrucure\SiteMenuMs.Infrastrucure.csproj", "{78B67D20-25E8-4B19-AC8F-3C0761122BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMenuMs.Infrastrucure", "SiteMenuMs.Infrastrucure\SiteMenuMs.Infrastrucure.csproj", "{78B67D20-25E8-4B19-AC8F-3C0761122BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{BA318309-9078-4E8E-A6AF-CBFC482CB61D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{78B67D20-25E8-4B19-AC8F-3C0761122BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B67D20-25E8-4B19-AC8F-3C0761122BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B67D20-25E8-4B19-AC8F-3C0761122BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

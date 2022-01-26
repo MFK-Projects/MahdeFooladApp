@@ -1,33 +1,98 @@
 ﻿@{
-	Layout = "_PanelLayout";
+    Layout = "_PanelLayout";
 }
 
 
+<div class="text-center bg-info p-3 mt-3 rounded">
+    <h2 class="text-light">فاکتور گزاش سوری</h2>
+</div>
 
-<form  id="login" target="frame" method="post" action="http://crm-srv:80/powerbi/?id=13615639-5b2b-460a-8d60-358914c53090&formatLocale=en-US&hostdata={"Build":"15.0.1104.239","ExternalUser":"True","IsPublicBuild":true,"Host":"Microsoft.ReportingServices.Portal.Services","HashedUserId":"A2AF300766765FD019E90A573B44AAFB9BA0DB385674E688148E6936F71D888D","InstallationId":"61bd5957-0b43-46b3-ac6a-426f7c84c364","IsEnabled":true,"Edition":"PBIRS Developer","AuthenticationTypes":"RSWindowsNTLM","NumberOfProcessors":2,"NumberOfCores":4,"IsVirtualMachine":true,"MachineId":"5EAFFCD0699F37880D0FDC86B84792E5","CountInstances":1,"Count14xInstances":0,"Count13xInstances":0,"Count12xInstances":0,"Count11xInstances":0,"ProductSku":"SSRSPBI"}">
-	<input type="hidden" name="username" value="a.moradi" />
-	<input type="hidden" name="password" value="r" />
-    <button type="submit">loging</button>
-</form>
+<div class="row">
+    <div class="col-md-6 border-dark p-3 ">
+        <div class="card card-body p-0" style="background-color: #43fff2">
+            <h4 class="text-center mb-3 mt-3">فیلتر بر اساس ماه</h4>
+            <div class="">
+                <a class="filter-btn p-3" onclick="FilterChart('1')">فرووردین</a>
+                <a class="filter-btn p-3" onclick="FilterChart('2')">اردیبهشت</a>
+                <a class="filter-btn p-3" onclick="FilterChart('3')">خرداد</a>
+                <a class="filter-btn p-3" onclick="FilterChart('4')">تیر</a>
+                <a class="filter-btn p-3" onclick="FilterChart('5')">مرداد</a>
+                <a class="filter-btn p-3" onclick="FilterChart('6')">شهریور</a>
+                <a class="filter-btn p-3" onclick="FilterChart('7')">مهر</a>
+                <a class="filter-btn p-3" onclick="FilterChart('8')">آبان</a>
+                <a class="filter-btn p-3" onclick="FilterChart('9')">آذر</a>
+                <a class="filter-btn p-3" onclick="FilterChart('10')">دی</a>
+                <a class="filter-btn p-3" onclick="FilterChart('11')">بهمن</a>
+                <a class="filter-btn p-3" onclick="FilterChart('12')">اسفند</a>
+            </div>
+        </div>
+    </div>
 
-<iframe id="frame" name="frame"></iframe>
+    <div class="col-md-6 bg-dark mt-3 mb-3" style="height:150px">
+    </div>
+</div>
 
-
+<div class="row">
+    <div class="col-12">
+        <canvas id="ChartKharid"></canvas>
+        <canvas id="ChartBuy"></canvas>
+        <canvas id="ChartMain"></canvas>
+    </div>
+</div>
 
 
 
 
 @section scripts{
-    <script type="text/javascript">
-    // submit the form into iframe for login into remote site
+<script>
+      window.onload = ()=>{
 
-    //document.getElementById('login').submit();
+            const labels = [
+                        'January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+    ];
 
-    // once you're logged in, change the source url (if needed)
-    var iframe = document.getElementById('frame');
-    iframe.onload = function() {
-            iframe.src = "http://crm-srv:80/powerbi/?id=13615639-5b2b-460a-8d60-358914c53090&formatLocale=en-US&hostdata={"Build":"15.0.1104.239","ExternalUser":"True","IsPublicBuild":true,"Host":"Microsoft.ReportingServices.Portal.Services","HashedUserId":"A2AF300766765FD019E90A573B44AAFB9BA0DB385674E688148E6936F71D888D","InstallationId":"61bd5957-0b43-46b3-ac6a-426f7c84c364","IsEnabled":true,"Edition":"PBIRS Developer","AuthenticationTypes":"RSWindowsNTLM","NumberOfProcessors":2,"NumberOfCores":4,"IsVirtualMachine":true,"MachineId":"5EAFFCD0699F37880D0FDC86B84792E5","CountInstances":1,"Count14xInstances":0,"Count13xInstances":0,"Count12xInstances":0,"Count11xInstances":0,"ProductSku":"SSRSPBI"}";
-        }
-    }
+              const data = {
+                labels: labels,
+                datasets: [{
+                  axis: 'y',
+                  label: 'My First Dataset',
+                  data: [65, 59, 80, 81, 56, 55, 40],
+                  fill: false,
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                  ],
+                  borderColor: [
+                    'rgb(255, 99, 132)',
+                  ],
+                  borderWidth: 1
+                }]
+              };
+
+
+            const configvertial={
+                type: 'bar',
+                data,
+              };
+           const confighorizental = {
+                type: 'bar',
+                data,
+                options:
+                {
+                  indexAxis: 'y',
+                }};
+
+            const stackedBar = new Chart(
+            document.getElementById('ChartBuy'),
+            configvertial);
+
+             const overall = new Chart(
+            document.getElementById('ChartKharid'),
+            confighorizental);
+      }
 </script>
 }
