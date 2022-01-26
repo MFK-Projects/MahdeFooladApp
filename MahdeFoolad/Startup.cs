@@ -25,7 +25,8 @@ namespace MahdeFoolad
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterSharedFrameworkService(Configuration.GetConnectionString("DefaultConnection"));
-            object p = services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddHttpClient();
         }
 
 

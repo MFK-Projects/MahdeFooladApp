@@ -1,4 +1,33 @@
 ﻿@{
-    Layout = "_PanelLayout";
+	Layout = "_PanelLayout";
 }
-hi
+
+
+
+<form  id="login" target="frame" method="post" action="http://crm-srv:80/powerbi/?id=13615639-5b2b-460a-8d60-358914c53090&formatLocale=en-US&hostdata={"Build":"15.0.1104.239","ExternalUser":"True","IsPublicBuild":true,"Host":"Microsoft.ReportingServices.Portal.Services","HashedUserId":"A2AF300766765FD019E90A573B44AAFB9BA0DB385674E688148E6936F71D888D","InstallationId":"61bd5957-0b43-46b3-ac6a-426f7c84c364","IsEnabled":true,"Edition":"PBIRS Developer","AuthenticationTypes":"RSWindowsNTLM","NumberOfProcessors":2,"NumberOfCores":4,"IsVirtualMachine":true,"MachineId":"5EAFFCD0699F37880D0FDC86B84792E5","CountInstances":1,"Count14xInstances":0,"Count13xInstances":0,"Count12xInstances":0,"Count11xInstances":0,"ProductSku":"SSRSPBI"}">
+	<input type="hidden" name="username" value="a.moradi" />
+	<input type="hidden" name="password" value="r" />
+    <button type="submit">loging</button>
+</form>
+
+<iframe id="frame" name="frame"></iframe>
+
+
+
+
+
+
+@section scripts{
+    <script type="text/javascript">
+    // submit the form into iframe for login into remote site
+
+    //document.getElementById('login').submit();
+
+    // once you're logged in, change the source url (if needed)
+    var iframe = document.getElementById('frame');
+    iframe.onload = function() {
+            iframe.src = "http://crm-srv:80/powerbi/?id=13615639-5b2b-460a-8d60-358914c53090&formatLocale=en-US&hostdata={"Build":"15.0.1104.239","ExternalUser":"True","IsPublicBuild":true,"Host":"Microsoft.ReportingServices.Portal.Services","HashedUserId":"A2AF300766765FD019E90A573B44AAFB9BA0DB385674E688148E6936F71D888D","InstallationId":"61bd5957-0b43-46b3-ac6a-426f7c84c364","IsEnabled":true,"Edition":"PBIRS Developer","AuthenticationTypes":"RSWindowsNTLM","NumberOfProcessors":2,"NumberOfCores":4,"IsVirtualMachine":true,"MachineId":"5EAFFCD0699F37880D0FDC86B84792E5","CountInstances":1,"Count14xInstances":0,"Count13xInstances":0,"Count12xInstances":0,"Count11xInstances":0,"ProductSku":"SSRSPBI"}";
+        }
+    }
+</script>
+}
