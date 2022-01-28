@@ -47,7 +47,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMenuMs.Application", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiteMenuMs.Infrastrucure", "SiteMenuMs.Infrastrucure\SiteMenuMs.Infrastrucure.csproj", "{78B67D20-25E8-4B19-AC8F-3C0761122BFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{BA318309-9078-4E8E-A6AF-CBFC482CB61D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{BA318309-9078-4E8E-A6AF-CBFC482CB61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientSideQueries", "ClientSideQueries\ClientSideQueries.csproj", "{74CA1DCE-7215-4DB6-9674-021DE9412E25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA318309-9078-4E8E-A6AF-CBFC482CB61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74CA1DCE-7215-4DB6-9674-021DE9412E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CA1DCE-7215-4DB6-9674-021DE9412E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CA1DCE-7215-4DB6-9674-021DE9412E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CA1DCE-7215-4DB6-9674-021DE9412E25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

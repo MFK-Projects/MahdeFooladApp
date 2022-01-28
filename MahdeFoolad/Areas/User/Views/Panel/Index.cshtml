@@ -45,54 +45,69 @@
 
 @section scripts{
 <script>
-      window.onload = ()=>{
+    window.onload = ()=>{
 
-            const labels = [
-                        'January',
-                        'February',
-                        'March',
-                        'April',
-                        'May',
-                        'June',
-    ];
-
-              const data = {
-                labels: labels,
-                datasets: [{
-                  axis: 'y',
-                  label: 'My First Dataset',
-                  data: [65, 59, 80, 81, 56, 55, 40],
-                  fill: false,
-                  backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                  ],
-                  borderColor: [
-                    'rgb(255, 99, 132)',
-                  ],
-                  borderWidth: 1
-                }]
-              };
+       var values =[];
+       var labels = [];
 
 
-            const configvertial={
-                type: 'bar',
-                data,
-              };
-           const confighorizental = {
-                type: 'bar',
-                data,
-                options:
-                {
-                  indexAxis: 'y',
-                }};
+       $.ajax({
+           url:"Reports",
+           type:"POST",
+           dataType:"JSON"
+       }).done(function(response){
 
-            const stackedBar = new Chart(
-            document.getElementById('ChartBuy'),
-            configvertial);
+           for(let i=0; i < response.length;i++)
+           {
+               values[i]= response[i].value;
+               labels[i] = response[i].month;
+           }
 
-             const overall = new Chart(
-            document.getElementById('ChartKharid'),
-            confighorizental);
-      }
+           console.log(values)
+
+
+           const data = {
+              labels: labels,
+              datasets: [{
+                axis: 'y',
+                label: 'My First Dataset',
+                data: values,
+                fill: false,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                  'rgb(255, 99, 132)',
+                ],
+                borderWidth: 1
+              }]
+            };
+
+
+          const configvertial={
+              type: 'bar',
+              data,
+            };
+         const confighorizental = {
+              type: 'bar',
+              data,
+              options:
+              {
+                indexAxis: 'y',
+              }};
+
+          const stackedBar = new Chart(
+          document.getElementById('ChartBuy'),
+          configvertial);
+
+           const overall = new Chart(
+          document.getElementById('ChartKharid'),
+          confighorizental);
+       });
+
+
+
+
+    }
 </script>
 }
