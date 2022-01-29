@@ -15,11 +15,12 @@ namespace ClientSideQueries.Reports.GozareshSori
     public class GozareshSoriLogic
     {
 
-        int[] Gorgeinmonth = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+        int[] MonthNUmber = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 
         //Query For Geting Report
-        private static string GetAllData = string.Empty;
-        private static string GetRelatedData=string.Empty;
+        private static string GetSellsData = string.Empty;
+        private static string GetBuyData = string.Empty;
+        private static string GetRelatedData = string.Empty;
 
         private readonly IDbConnection _connection;
         public GozareshSoriLogic(IContextHelper context)
@@ -27,27 +28,34 @@ namespace ClientSideQueries.Reports.GozareshSori
             _connection = context.Create();
         }
 
-        public ListResultDTO<GozaresSoriReportModel> SumDataByMonth()
+        public ListResultDTO<GozaresSoriReportModel> GetSum(GozareshSoriFilterModel filter)
         {
-            var data = _connection.Query<GozareshSoriDataModel>(GetAllData);
+            List<GozareshSoriDataModel> data = new List<GozareshSoriDataModel>();
+
+
             decimal sum = default;
             List<GozareshSoriDataModel> datamodel = default;
             List<GozaresSoriReportModel> reportmodel = new();
 
 
+            if (filter.Type == "sells")
+                data = _connection.Query<GozareshSoriDataModel>(GetSellsData).ToList();
+            else if (filter.Type == "buys")
+                data = _connection.Query<GozareshSoriDataModel>(GetBuyData).ToList();
 
-            for (int i = 0; i < Gorgeinmonth.Length; i++)
+
+            for (int i = 0; i < MonthNUmber.Length; i++)
             {
                 datamodel = new();
 
                 foreach (var item in data)
                 {
-                    if (Gorgeinmonth[i] == item.CreateionOn.Month)
+                    if (MonthNUmber[i] == item.New_Shamsi_Month_Number)
                     {
-                        sum += item.price;
+                        sum += item.New_Profit;
                         datamodel.Add(item);
                     }
-                    reportmodel.Add(new GozaresSoriReportModel { Details = datamodel, LastUpdaet = DateTime.Now.ToFarsi(), PersianMonthName = item.CreateionOn.ToFarsi().FarsiMonthName(), Values = sum });
+                    reportmodel.Add(new GozaresSoriReportModel {Values = sum,Details = datamodel,LastUpdaet=DateTime.Now.ToFarsi(),Shamsi_Month_Name  = MonthNUmber[i].ToString().FarsiMonthName()});
                     datamodel = null;
 
                 }
@@ -59,16 +67,19 @@ namespace ClientSideQueries.Reports.GozareshSori
                 return new ListResultDTO<GozaresSoriReportModel> { Data = default, Message = "failer", Succss = false };
         }
 
-
-        public ListResultDTO<GozaresSoriReportModel> RelatedData(string monthname)
+        public ListResultDTO<GozaresSoriReportModel> RelatedData(GozareshSoriFilterModel model)
         {
-            if(string.IsNullOrEmpty(monthname))
+            if (model.Type == "sells")
             {
-                var monthnumber = monthname.ToFarsiMonthNumber();
-                var data = _connection.Query<GozareshSoriDataModel>(GetAllData).Select(x => new GozaresSoriReportModel{Values = x.price,});
+               GetSellsData += " WHERE MONTHNAME = "
+                var data = _connection.Query<GozareshSoriDataModel>(GetSellsData).Select(x => new GozaresSoriReportModel { Values = x.price });
 
-                if(data.Count > 0)
+                if (data.Count > 0)
                     return new ResultDTO<GozaresSoriReportModel> { Data = }
+            }
+            else if(model.Type == "buys")
+            {
+
             }
         }
     }

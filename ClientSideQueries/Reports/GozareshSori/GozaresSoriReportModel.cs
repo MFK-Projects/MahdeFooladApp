@@ -10,7 +10,7 @@ namespace ClientSideQueries.Reports.GozareshSori
     {
         public string LastUpdaet { get; set; }
         public decimal Values { get; set; }
-        public string PersianMonthName { get; set; }
+        public string Shamsi_Month_Name { get; set; }
         public List<GozareshSoriDataModel> Details { get; set; }
     }
 }

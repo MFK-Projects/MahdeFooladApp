@@ -122,7 +122,13 @@ namespace SharedFrameWork.Common
             if(!string.IsNullOrEmpty(date))
             {
 
-                var month = date.Substring(5,2);
+                var month = date.Substring(5, 2);
+
+                if (month.Contains("/"))
+                    month = month.Replace("/", "");
+                if (month.Length < 2)
+                    month = "0" + month;
+
                 return month switch 
                 {
                     "01" =>MonthNames[0],
@@ -143,7 +149,7 @@ namespace SharedFrameWork.Common
 
             return string.Empty;
         }
-        public static int ToFarsiMonthNumber(this string monthname)
+        public static string ToFarsiMonthNumber(this string monthname)
         {
             if (!string.IsNullOrEmpty(monthname))
             {
